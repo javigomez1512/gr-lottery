@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 app-root {
   background-color: lightgray;
 
@@ -14,6 +15,7 @@ app-root {
   height: 100vh;
   width: 100vw;
 }
+
 app-ball-selector {
   flex: 2;
 
@@ -23,6 +25,7 @@ app-ball-selector {
   margin: 10px 5px 10px 10px;
   position: relative;
 }
+
 app-bet-slip {
   flex: 1;
 
@@ -30,4 +33,31 @@ app-bet-slip {
   border-radius: 6px;
   margin: 10px 10px 10px 5px;
   width: 34%;
+}
+
+@media screen and (max-width: 1024px) {
+  app-root {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: unset;
+
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  app-ball-selector {
+    flex: unset;
+    height: 60%;
+    margin: unset;
+    width: 100%;
+  }
+
+  app-bet-slip {
+    height: 40%;
+    margin: unset;
+    margin-top: 10px;
+    width: 60%;
+  }
+  
 }

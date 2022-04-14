@@ -1,5 +1,7 @@
-$ball-size-desktop: 5vw;
-$ball-size-desktop-selected: 7vw;
+$ball-size-desktop: 4.5vw;
+$ball-size-desktop-selected: 6.5vw;
+$ball-size-mobile: 6vw;
+$ball-size-mobile-selected: 8vw;
 
 .ball-selector-wrapper {
   font-size: 38px;
@@ -94,6 +96,45 @@ $ball-size-desktop-selected: 7vw;
       font-weight: bold;
       margin-top: 100px;
       padding: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ball-selector-wrapper {
+
+    .balls-row {
+      .ball {
+        font-size: 4vw;
+        height: $ball-size-mobile;
+        width: $ball-size-mobile;
+
+        &.selected {
+          width: $ball-size-mobile-selected;
+          height: $ball-size-mobile-selected;
+          font-size: 6.5vw;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .reset-selection {
+      color: cadetblue;
+      font-stretch: condensed;
+      font-weight: normal;
+      margin-top: 140px;
+      text-align: center;
+    }
+
+    .bet-result {
+      .ball {
+        font-size: 5vw;
+        height: $ball-size-mobile;
+        width: $ball-size-mobile;
+      }
     }
   }
 }

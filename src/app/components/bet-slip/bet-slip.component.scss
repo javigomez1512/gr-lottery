@@ -1,4 +1,5 @@
 $ball-size-desktop: 2.9vw;
+$ball-size-mobile: 5vw;
 $blue-buttons: #008dff;
 $bet-slip-wrapper-margin: 25px;
 
@@ -113,5 +114,56 @@ button {
   transition: all 0.2s;
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .bet-slip-wrapper {
+    .bet-history {
+      .ball {
+        font-size: 3vw;
+        height: $ball-size-mobile;
+        width: $ball-size-mobile;
+      }
+    }
+
+    .bet-form {
+      width: 100%;
+
+      .input-wrapper {
+        position: relative;
+
+        input {
+          width: 85%;
+        }
+
+        i {
+          width: 150%;
+        }
+      }
+
+      button {
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
+    }
+
+    .out-wrapper {
+      font-size: 4vw;
+      top: 70px;
+      right: -74%;
+      width: 60% !important;
+
+      
+      @media screen and (max-width: 564px) {
+        font-size: 5vw;
+        right: -85%;
+        width: 70% !important;
+        
+        button.place-bet {
+          font-size: 5vw;
+        }
+      }
+    }
   }
 }
