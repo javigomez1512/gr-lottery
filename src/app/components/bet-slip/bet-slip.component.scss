@@ -1,0 +1,117 @@
+$ball-size-desktop: 2.9vw;
+$blue-buttons: #008dff;
+$bet-slip-wrapper-margin: 25px;
+
+.bet-slip-wrapper {
+  margin: $bet-slip-wrapper-margin;
+  position: relative;
+
+  .bet-history {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: bold;
+
+    .ball {
+      background-color: lightgray;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 100%;
+      height: $ball-size-desktop;
+      width: $ball-size-desktop;
+    }
+  }
+
+  .bet-form {
+    display: flex;
+    justify-content: center;
+
+    margin: 120px auto 230px auto;
+    width: 80%;
+
+    .input-wrapper {
+      position: relative;
+
+      input {
+        border: lightgray solid 2px;
+        border-radius: 5px;
+        font-size: 25px;
+        margin-right: 20px;
+        padding: 10px;
+        text-align: center;
+        width: 80%;
+
+        &.ng-touched {
+          &.ng-valid {
+            border-color: $blue-buttons;
+          }
+          &.ng-invalid {
+            border-color: red;
+          }
+        }
+      }
+
+      i {
+        color: red;
+        bottom: -25px;
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    button {
+      background-color: $blue-buttons;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .out-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 25px;
+    position: absolute;
+    margin-left: -$bet-slip-wrapper-margin;
+    width: calc(100% + (2 * $bet-slip-wrapper-margin));
+
+    .total {
+      margin: 20px;
+    }
+    button.place-bet {
+      background-color: $blue-buttons;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 25px;
+      margin-bottom: 20px;
+      padding: 15px;
+      width: 100%;
+    }
+    .game-over {
+      color: red;
+      font-weight: bold;
+      margin: 20px;
+    }
+  }
+}
+
+button {
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.5;
+  }
+}

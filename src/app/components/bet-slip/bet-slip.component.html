@@ -1,0 +1,54 @@
+<div class="bet-slip-wrapper">
+  <div class="bet-history">
+    <div
+      class="ball"
+      *ngFor="let ball of betHistory"
+      [ngStyle]="{ 'background-color': ball.color }"
+    >
+      {{ ball.number }}
+    </div>
+    <div
+      class="ball"
+      *ngFor="let _ of [].constructor(betsLimit - betHistory.length)"
+    ></div>
+  </div>
+
+  <form [formGroup]="betForm" class="bet-form" (submit)="onRaiseBet()">
+    <div class="input-wrapper">
+      <input
+        formControlName="amount"
+        type="number"
+        class="amount"
+        placeholder="raise bet"
+      />
+      <i
+        *ngIf="
+          betForm.controls['amount'].touched &&
+          betForm.controls['amount'].errors
+        "
+        >Incorrect amount (5 - 1000€)</i
+      >
+    </div>
+    <button type="submit" [disabled]="!betForm.valid || makeBet">OK</button>
+  </form>
+
+  <div class="out-wrapper">
+    <div class="total">Bet: {{ betAmount$ | async }}€</div>
+    <button
+      class="place-bet"
+      [hidden]="
+        betAmount < 5 ||
+        betAmount > 1000 ||
+        betHistory.length >= betsLimit ||
+        makeBet
+      "
+      (click)="onBet()"
+    >
+      Place bet
+    </button>
+    <div class="wallet">Wallet: {{ wallet$ | async }}€</div>
+    <div class="game-over" *ngIf="betHistory.length >= betsLimit">
+      Max number of bets
+    </div>
+  </div>
+</div>

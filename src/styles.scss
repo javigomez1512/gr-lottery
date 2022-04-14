@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+app-root {
+  background-color: lightgray;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  height: 100vh;
+  width: 100vw;
+}
+app-ball-selector {
+  flex: 2;
+
+  background-color: #fff;
+  border-radius: 6px;
+  height: 650px;
+  margin: 10px 5px 10px 10px;
+  position: relative;
+}
+app-bet-slip {
+  flex: 1;
+
+  background-color: #fff;
+  border-radius: 6px;
+  margin: 10px 10px 10px 5px;
+  width: 34%;
+}

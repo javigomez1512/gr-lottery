@@ -1,0 +1,99 @@
+$ball-size-desktop: 5vw;
+$ball-size-desktop-selected: 7vw;
+
+.ball-selector-wrapper {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 100px 50px auto 50px;
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .balls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 120px;
+
+    .ball {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-style: ridge;
+      border-radius: 100%;
+      height: $ball-size-desktop;
+      transition: all 0.5s;
+      width: $ball-size-desktop;
+
+      &.selected {
+        background-color: #000 !important;
+        color: #fff;
+        width: $ball-size-desktop-selected;
+        height: $ball-size-desktop-selected;
+        font-size: 60px;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .reset-selection {
+    color: cadetblue;
+    font-stretch: condensed;
+    font-weight: normal;
+    margin-top: 140px;
+    text-align: center;
+  }
+
+  .bet-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .ball {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-style: ridge;
+      border-radius: 100%;
+      height: $ball-size-desktop;
+      margin: 20px;
+      width: $ball-size-desktop;
+    }
+
+    .won-lost {
+      color: red;
+
+      &.won {
+        color: green;
+      }
+    }
+
+    .continue {
+      background-color: #008dff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 38px;
+      font-weight: bold;
+      margin-top: 100px;
+      padding: 40px;
+    }
+  }
+}
